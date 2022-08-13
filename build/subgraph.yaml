@@ -1,6 +1,6 @@
 specVersion: 0.0.4
 schema:
-  file: ./schema.graphql
+  file: schema.graphql
 features:
   - ipfsOnEthereumContracts
 dataSources:
@@ -16,13 +16,13 @@ dataSources:
       apiVersion: 0.0.6
       language: wasm/assemblyscript
       entities:
-          - Event
-          - Account
-          - RSVP
-          - Confirmation
+        - Event
+        - Account
+        - RSVP
+        - Confirmation
       abis:
         - name: Web3Events
-          file: ./abis/Web3Events.json
+          file: Web3Events/abis/Web3Events.json
       eventHandlers:
         - event: ConfirmedAttendee(bytes32,address)
           handler: handleConfirmedAttendee
@@ -32,4 +32,4 @@ dataSources:
           handler: handleNewEventCreated
         - event: NewRSVP(bytes32,address)
           handler: handleNewRSVP
-      file: ./src/web-3-events.ts
+      file: Web3Events/Web3Events.wasm
